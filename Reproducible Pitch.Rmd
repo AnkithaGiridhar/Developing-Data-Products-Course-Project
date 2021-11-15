@@ -1,0 +1,31 @@
+---
+title: "Developing Data Products Course Project"
+author: "Ankitha Giridhar"
+date: "15/11/2021"
+output: ioslides_presentation
+---
+
+```{r setup}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+This is the final work for the Developing Data Products Course Project. This includes a Shiny app and its associated documentation. In this project, multiple datasets corresponding to US States were used, including state.name, state.abb, state.division, state.region, state.center, state.area
+
+## Links
+
+The link to the app is: https://github.com/AnkithaGiridhar/Developing-Data-Products-Course-Project <br/>
+The link to the source code is: https://ankithagiridhar.shinyapps.io/developing-data-products-course-project/
+
+## About the Application
+
+The app explores data about states in the USA. Upon selecting the state from the drop-down menu, the associated data is displayed in the main panel. The data includes the state code, division, region, area, and the latitude and longitude of the state's geographical center.
+
+## Calculations
+The calculations done display the average state area for the region of the selected state. For example, if the state of Pennsylvania is selected, the code implements:
+```{r example}
+mean(state.area[which(state.region==state.region[
+  which(state.name=="Pennsylvania")])])
+```
+
+As observed, this code returns the average area of the states that share the same region as Pennsylvania.
